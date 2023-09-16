@@ -1,0 +1,57 @@
+Arguments: 
+  /Users/akinremiolumide/.nvm/versions/node/v18.17.1/bin/node /usr/local/bin/yarn
+
+PATH: 
+  /Users/akinremiolumide/.nvm/versions/node/v18.17.1/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/opt/homebrew/bin:/opt/homebrew/sbin
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  18.17.1
+
+Platform: 
+  darwin arm64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/@parcel/transformer-js/-/transformer-js-2.8.3.tgz: ETIMEDOUT
+      at Timeout._onTimeout (/usr/local/lib/node_modules/yarn/lib/cli.js:141550:19)
+      at listOnTimeout (node:internal/timers:569:17)
+      at process.processTimers (node:internal/timers:512:7)
+
+npm manifest: 
+  {
+    "name": "easy-shopper",
+    "version": "1.0.0",
+    "private": true,
+    "description": "easy-shopper",
+    "author": "akinmyde",
+    "keywords": [
+      "gatsby"
+    ],
+    "scripts": {
+      "develop": "gatsby develop",
+      "start": "gatsby develop",
+      "build": "gatsby build",
+      "serve": "gatsby serve",
+      "clean": "gatsby clean",
+      "typecheck": "tsc --noEmit"
+    },
+    "dependencies": {
+      "gatsby": "^5.12.4",
+      "react": "^18.2.0",
+      "react-dom": "^18.2.0"
+    },
+    "devDependencies": {
+      "@types/node": "^20.3.3",
+      "@types/react": "^18.2.14",
+      "@types/react-dom": "^18.2.6",
+      "typescript": "^5.1.6"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
