@@ -11,7 +11,32 @@ module.exports = {
       // Comma-delimited format:
       sans: "Helvetica, Arial, sans-serif",
     },
+    container: {
+      center: true,
+      padding: "2rem",
+      maxWidth: "150px",
+    },
     extend: {},
+    colors: {
+      transparent: "transparent",
+      white: "#ffffff",
+      black: {
+        900: "#030303",
+        100: "#262626",
+        normal: "#000000",
+      },
+      blue: "#3164f4",
+      gray: {
+        // 900: "#101828",
+        // 700: "#",
+        // 600: "#475467",
+        // 500: "#667085",
+        300: "#d9d9d9",
+        200: "#7f7f7f",
+        100: "#4f4f4f",
+        // normal: "#272727",
+      },
+    },
   },
   plugins: [],
 };

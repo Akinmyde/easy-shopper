@@ -1,193 +1,208 @@
-import * as React from "react"
-import type { HeadFC, PageProps } from "gatsby"
+import * as React from "react";
 
-const pageStyles = {
-  color: "#232129",
-  padding: 96,
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
-}
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320,
-}
-const headingAccentStyles = {
-  color: "#663399",
-}
-const paragraphStyles = {
-  marginBottom: 48,
-}
-const codeStyles = {
-  color: "#8A6534",
-  padding: 4,
-  backgroundColor: "#FFF4DB",
-  fontSize: "1.25rem",
-  borderRadius: 4,
-}
-const listStyles = {
-  marginBottom: 96,
-  paddingLeft: 0,
-}
-const doclistStyles = {
-  paddingLeft: 0,
-}
-const listItemStyles = {
-  fontWeight: 300,
-  fontSize: 24,
-  maxWidth: 560,
-  marginBottom: 30,
-}
+import type { HeadFC, PageProps } from "gatsby";
 
-const linkStyle = {
-  color: "#8954A8",
-  fontWeight: "bold",
-  fontSize: 16,
-  verticalAlign: "5%",
-}
+import Button from "../components/button";
+import Layout from "../components/layout";
+import StackedCard from "../components/stacked-card";
+import GetStarted from "../components/get-started";
 
-const docLinkStyle = {
-  ...linkStyle,
-  listStyleType: "none",
-  display: `inline-block`,
-  marginBottom: 24,
-  marginRight: 12,
-}
+import headerImg from "../images/man.jpeg";
+import introImg from "../images/intro-img.png";
+import smartSaveImg from "../images/smartsave.png";
+import TestimonialCard from "../components/testimonial-card";
 
-const descriptionStyle = {
-  color: "#232129",
-  fontSize: 14,
-  marginTop: 10,
-  marginBottom: 0,
-  lineHeight: 1.25,
-}
-
-const docLinks = [
+const steps = [
   {
-    text: "TypeScript Documentation",
-    url: "https://www.gatsbyjs.com/docs/how-to/custom-configuration/typescript/",
-    color: "#8954A8",
+    number: 1,
+    text: "Reach out to one of our specialists, and have short introduction session.",
   },
   {
-    text: "GraphQL Typegen Documentation",
-    url: "https://www.gatsbyjs.com/docs/how-to/local-development/graphql-typegen/",
-    color: "#8954A8",
-  }
-]
+    number: 2,
+    text: "Our specialist will prepare personalized package suitable for your needs.",
+  },
+  {
+    number: 2,
+    text: "Poof! You are ready to work smart with optimized operations.",
+  },
+];
 
-const badgeStyle = {
-  color: "#fff",
-  backgroundColor: "#088413",
-  border: "1px solid #088413",
-  fontSize: 11,
-  fontWeight: "bold",
-  letterSpacing: 1,
-  borderRadius: 4,
-  padding: "4px 6px",
-  display: "inline-block",
-  position: "relative" as "relative",
-  top: -2,
-  marginLeft: 10,
-  lineHeight: 1,
-}
-
-const links = [
+const testimonials = [
   {
-    text: "Tutorial",
-    url: "https://www.gatsbyjs.com/docs/tutorial/getting-started/",
-    description:
-      "A great place to get started if you're new to web development. Designed to guide you through setting up your first Gatsby site.",
-    color: "#E95800",
+    review:
+      "SInce implementing Easyshopr our business has seen significant growth.",
+    rating: 4,
+    author: "Jack Sibire",
+    role: "Lead Manager, Growio",
   },
   {
-    text: "How to Guides",
-    url: "https://www.gatsbyjs.com/docs/how-to/",
-    description:
-      "Practical step-by-step guides to help you achieve a specific goal. Most useful when you're trying to get something done.",
-    color: "#1099A8",
+    review: "I recommend Easyshopr to any business looking for improvements.",
+    rating: 5,
+    author: "Adele Mouse",
+    role: "Product Manager, Mousio",
   },
   {
-    text: "Reference Guides",
-    url: "https://www.gatsbyjs.com/docs/reference/",
-    description:
-      "Nitty-gritty technical descriptions of how Gatsby works. Most useful when you need detailed information about Gatsby's APIs.",
-    color: "#BC027F",
+    review: "I can't imagine running our company without it.",
+    rating: 4,
+    author: "Ben Clock",
+    role: "CTO, Clockwork",
   },
-  {
-    text: "Conceptual Guides",
-    url: "https://www.gatsbyjs.com/docs/conceptual/",
-    description:
-      "Big-picture explanations of higher-level Gatsby concepts. Most useful for building understanding of a particular topic.",
-    color: "#0D96F2",
-  },
-  {
-    text: "Plugin Library",
-    url: "https://www.gatsbyjs.com/plugins",
-    description:
-      "Add functionality and customize your Gatsby site or app with thousands of plugins built by our amazing developer community.",
-    color: "#8EB814",
-  },
-  {
-    text: "Build and Host",
-    url: "https://www.gatsbyjs.com/cloud",
-    badge: true,
-    description:
-      "Now you’re ready to show the world! Give your Gatsby site superpowers: Build and host on Gatsby Cloud. Get started for free!",
-    color: "#663399",
-  },
-]
+];
 
 const IndexPage: React.FC<PageProps> = () => {
   return (
-    <main style={pageStyles}>
-      <h1 style={headingStyles}>
-        Congratulations
-        <br />
-        <span style={headingAccentStyles}>— you just made a Gatsby site! 🎉🎉🎉</span>
-      </h1>
-      <p style={paragraphStyles}>
-        Edit <code style={codeStyles}>src/pages/index.tsx</code> to see this page
-        update in real-time. 😎
-      </p>
-      <ul style={doclistStyles}>
-        {docLinks.map(doc => (
-          <li key={doc.url} style={docLinkStyle}>
-            <a
-              style={linkStyle}
-              href={`${doc.url}?utm_source=starter&utm_medium=ts-docs&utm_campaign=minimal-starter-ts`}
-            >
-              {doc.text}
-            </a>
-          </li>
-        ))}
-      </ul>
-      <ul style={listStyles}>
-        {links.map(link => (
-          <li key={link.url} style={{ ...listItemStyles, color: link.color }}>
-            <span>
-              <a
-                style={linkStyle}
-                href={`${link.url}?utm_source=starter&utm_medium=start-page&utm_campaign=minimal-starter-ts`}
-              >
-                {link.text}
-              </a>
-              {link.badge && (
-                <span style={badgeStyle} aria-label="New Badge">
-                  NEW!
-                </span>
-              )}
-              <p style={descriptionStyle}>{link.description}</p>
-            </span>
-          </li>
-        ))}
-      </ul>
-      <img
-        alt="Gatsby G Logo"
-        src="data:image/svg+xml,%3Csvg width='24' height='24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 2a10 10 0 110 20 10 10 0 010-20zm0 2c-3.73 0-6.86 2.55-7.75 6L14 19.75c3.45-.89 6-4.02 6-7.75h-5.25v1.5h3.45a6.37 6.37 0 01-3.89 4.44L6.06 9.69C7 7.31 9.3 5.63 12 5.63c2.13 0 4 1.04 5.18 2.65l1.23-1.06A7.959 7.959 0 0012 4zm-8 8a8 8 0 008 8c.04 0 .09 0-8-8z' fill='%23639'/%3E%3C/svg%3E"
-      />
-    </main>
-  )
-}
+    <Layout>
+      <div className="container">
+        <header className="grid place-items-center grid-cols-[45%_1fr] pt-8 min-h-screen">
+          <div className="">
+            <p className="text-gray-200 text-[13px] font-bold uppercase mb-3">
+              Free 30 days trial
+            </p>
+            <h1 className="text-7xl font-semibold mb-7">
+              The best way to showcase your project.
+            </h1>
+            <p className="text-black-900 text-xl">
+              Here you can put a short description about your project.
+            </p>
+            <div className="flex gap-5 mt-10">
+              <Button>Try for free</Button>
+              <Button variant="secondary">See how it works</Button>
+            </div>
+          </div>
 
-export default IndexPage
+          <div className="relative md:left-5 h-[595px] w-full lg:w-[727px]">
+            {/* <img src={headerImg} width="727px" height="595px" /> */}
+            <img src={headerImg} className="object-cover h-full w-full" />
+          </div>
+        </header>
 
-export const Head: HeadFC = () => <title>Home Page</title>
+        <section className="flex flex-col items-center my-32">
+          <p className="text-center text-black-100 font-semibold max-w-sm">
+            Trusted by individuals and teams at the world's best companies
+          </p>
+          <div className="flex gap-5 text-3xl text-gray-200 font-semibold justify-center mt-5">
+            <p>Logo</p>
+            <p>Logo</p>
+            <p>Logo</p>
+            <p>Logo</p>
+            <p>Logo</p>
+          </div>
+        </section>
+
+        <StackedCard>
+          {/* <section className="relative my-32">
+            <div className="relative z-10 bg-white rounded-2xl grid place-items-center grid-cols-[40%_1fr] px-12 w-full"> */}
+          <div>
+            <h2 className="text-5xl font-semibold text-black-900">
+              Introducing good solution
+            </h2>
+            <p className="text-black-900 text-xl mt-1 mb-3">
+              Join our community and experience the benefits today!
+            </p>
+            <Button>Try for free</Button>
+          </div>
+          <div className="h-[450px] relative w-full bottom-32">
+            <img src={introImg} className="h-full object-cover w-full" />
+          </div>
+          {/* </div> */}
+
+          {/* <div className="absolute -z-5 h-20 px-4 -bottom-3 w-full">
+              <div className="bg-gray-200 opacity-[.13] w-full h-full rounded-2xl" />
+            </div>
+          </section> */}
+        </StackedCard>
+
+        <section className="grid grid-cols-2 place-items-center my-32">
+          <div className="h-[450px] w-full">
+            <img src={smartSaveImg} className="h-full object-cover w-full" />
+          </div>
+
+          <div className="flex flex-col gap-4 max-w-[80%]">
+            <p className="uppercase text-gray-200 text-[13px] font-bold">
+              Smartsave
+            </p>
+            <h2 className="text-black-900 text-[32px] font-semibold leading-10 max-w-[60%]">
+              All your work is safe with us
+            </h2>
+            <p className="text-black-900">
+              We take your data security seriously, which is why we use advanced
+              encryption protocols to protect your files in the cloud. Your data
+              is safe abd secure with us.
+            </p>
+            <Button variant="secondary">Try now</Button>
+          </div>
+        </section>
+
+        <section className="grid grid-cols-2 place-items-center mb-32">
+          <div className="flex flex-col gap-4 max-w-[80%]">
+            <p className="uppercase text-gray-200 text-[13px] font-bold">
+              Costsaver
+            </p>
+            <h2 className="text-black-900 text-[32px] font-semibold leading-10 max-w-[60%]">
+              Cost saving in a smart way
+            </h2>
+            <p className="text-black-900">
+              Powerful tool that helps you reduce costs and save money on your
+              business operations. With advanced analytics and optimization
+              algorithms, Costsaver analyzes your existing workflows and
+              identifies areas for improvement.
+            </p>
+            <Button variant="secondary">Try now</Button>
+          </div>
+
+          <div className="h-[450px] w-full">
+            <img src={smartSaveImg} className="h-full object-cover w-full" />
+          </div>
+        </section>
+
+        <StackedCard gridCols="grid-cols-2">
+          <div className="flex flex-col justify-center">
+            <div className="relative w-full bottom-48">
+              <img src={introImg} className=" w-full" />
+            </div>
+
+            {/* <div className="flex-grow gap-5"> */}
+            <h2 className="text-5xl font-semibold text-black-900">
+              How to join our community
+            </h2>
+            <p className="text-black-900 text-xl mt-1 mb-3">
+              Just 3 simple steps to optimize your company operations.
+            </p>
+            <Button>Sign up now</Button>
+            {/* </div> */}
+          </div>
+
+          <div>
+            {steps.map((step) => (
+              <div className="border-b border-gray-300 py-8">
+                <h3 className="text-black-900 text-[32px] font-semibold leading-10">
+                  Step {step.number}
+                </h3>
+                <p className="text-gray-100 mt-8 max-w-[60%]">{step.text}</p>
+              </div>
+            ))}
+          </div>
+        </StackedCard>
+
+        <section className="my-32">
+          <h2 className="text-5xl font-semibold text-center mb-4">Testimonials</h2>
+          <p className="text-center text-xl text-black-900 ">
+            People love what we do and we want to let you know
+          </p>
+
+          <div className="grid grid-cols-3 gap-8 mt-8">
+            {testimonials.map((item) => (
+              <TestimonialCard testimonial={item} />
+            ))}
+          </div>
+        </section>
+
+        <GetStarted />
+      </div>
+    </Layout>
+  );
+};
+
+export default IndexPage;
+
+export const Head: HeadFC = () => <title>Home Page</title>;

@@ -1,45 +1,89 @@
-import { HeadFC } from 'gatsby'
-import * as React from 'react'
-import { Layout, Button, Row, Col } from 'antd'
-import image from '../images/image.png'
+import { HeadFC } from "gatsby";
+import * as React from "react";
 
-import Header from '../components/header.jsx'
+import Layout from "../components/layout";
+import GetStarted from "../components/get-started";
 
-const { Footer, Content } = Layout;
+import peopleImg from "../images/people.png";
+import smartSaveImg from "../images/smartsave.png";
+import avatarImg from "../images/avatar.jpeg";
 
 const AboutPage = () => {
   return (
-    <div className=' bg-white'>
-      <Header />
-      <Content className='mx-20'>
-        <Row>
-          <Col span={12}>
-            <div className='mt-24'>
-              <p className='text-xs text-gray-400 mb-4'>- FREE 30 DAYS TRIAL</p>
-              <h1 className='text-8xl mb-6'>The best way to showcase your project.</h1>
-              <p className='text-sm mb-10'>Here you can put a short description about your project</p>
-            </div>
+    <Layout>
+      <div className="container">
+        <header className="pt-32 min-h-screen text-center">
+          <div className="mb-8">
+            <h1 className="text-black-900 text-5xl font-semibold mb-6">
+              About us
+            </h1>
+
+            <p className="text-xl text-black-900 max-w-[70%] mx-auto">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Unde
+              eaque recusandae perspiciatis perferendis at commodi expedita
+              doloribus? Architecto asperiores earum optio.
+            </p>
+          </div>
+          <img src={peopleImg} height="410" />
+        </header>
+
+        <section className="mt-8 mb-8 pb-12 border-b border-b-gray-300 text-center">
+          <h2 className="text-black-900 text-5xl font-semibold mb-6">
+            Our mission
+          </h2>
+
+          <p className="text-xl text-black-900 max-w-[70%] mx-auto">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt
+            possimus non nisi dolore perferendis neque officia, voluptates cum
+            voluptas suscipit sit, harum odit ratione beatae hic vero vel culpa
+            fugiat voluptatem molestias aut. Quisquam aut id qui nemo, facilis
+            deserunt quo. Veritatis fuga praesentium cum eveniet doloribus
+            corporis! Magnam, quod?
+          </p>
+        </section>
+
+        <section className="flex items-center my-32">
+          <h2 className="text-black-900 text-5xl font-semibold max-w-[30%]">
+            Let's start working more efficiently today!
+          </h2>
+          <div className="h-[450px] w-full">
+            <img src={smartSaveImg} className="h-full object-contain w-full" />
+          </div>
+        </section>
+
+        <section className="mb-8  text-center">
+          <h2 className="text-black-900 text-5xl font-semibold mb-6">Team</h2>
+
+          <p className="text-xl text-black-900 max-w-[70%] mx-auto mb-8">
+            Meet the people behind our magical product.
+          </p>
+
+          <div className="grid grid-cols-4 grid-rows-2 gap-8 place-items-center ">
+            {[...Array(8)].map((_, index) => (
               <div>
-                <Button type='primary'>Try for free</Button>
-                <Button>See how it works</Button>
+                <div className="h-[160px] w-[160px]">
+                  <img
+                    src={avatarImg}
+                    key={index}
+                    className="rounded-full h-full"
+                    width="160"
+                    height="160"
+                  />
+                </div>
+                <p className="text-black-900 font-semibold text-xl text-center mt-4">
+                  Hannah Pete
+                </p>
+                <p className="text-black-900 text-xl text-center">CEO</p>
               </div>
-          </Col>
-          <Col span={12}>
-            <img alt='store' src={image} />
-          </Col>
-        </Row>
-        <div className='w-1/5 text-center mt-10'>
-          <p>Trusted by individuals and teams at the world's best companies</p>
-          <p>Logo</p>
-        </div>
-      </Content>
-      {/* <Footer>Footer</Footer>
-          <h1>About Me</h1>
-          <p>Hi there! I'm the proud creator of this site, which I built with Gatsby.</p> */}
-    </div>
-  )
-}
+            ))}
+          </div>
+        </section>
+        <GetStarted />
+      </div>
+    </Layout>
+  );
+};
 
-export const Head: HeadFC = () => <title>About Me</title>
+export const Head: HeadFC = () => <title>About Us</title>;
 
-export default AboutPage
+export default AboutPage;
