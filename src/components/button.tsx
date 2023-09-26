@@ -4,11 +4,13 @@ const variants = {
   primary: "bg-blue text-white",
   secondary: "bg-transparent border-[#030303] border text-[#030303]",
   tertiary: "bg-transparent text-[#262626]",
-};
+} as const;
+
+type BtnVariant = keyof typeof variants;
 
 type Props = {
   children: React.ReactNode;
-  variant?: "primary" | "secondary" | "tertiary";
+  variant?: BtnVariant;
   fullWidth?: boolean;
 };
 

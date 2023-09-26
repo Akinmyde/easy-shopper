@@ -2,9 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
-body{
-    background-color: #ededed;
+body {
+  background-color: #ededed;
 }
 .container {
-    @apply max-w-[1150px];
+  @apply max-w-[1150px];
+}
+
+.rotate-menu {
+  transform: rotate(-45deg) translate(-5px, 1px);
+}
+
+.-rotate-menu {
+  transform: rotate(45deg) translate(-4px, -1px);
 }

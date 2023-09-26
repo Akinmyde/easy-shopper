@@ -17,7 +17,7 @@ const footerItems = [
 const Footer = () => {
   return (
     <footer className="border-t border-t-gray-300 pt-8 pb-24">
-      <div className="container flex justify-between items-start flex-wrap">
+      <div className="container grid sm:grid-cols-2 md:grid-cols-4 justify-between items-start">
         <div>
           <div>
             <img src={logo} alt="Logo" width={70} height={"auto"} />
@@ -32,7 +32,7 @@ const Footer = () => {
             className="font-semibold text-black-100 grid gap-4"
           >
             {item.columns.map((column) => (
-              <li>{column}</li>
+              <li key={column}>{column}</li>
             ))}
           </ul>
         ))}

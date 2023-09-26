@@ -1,10 +1,18 @@
 import React from "react";
 
-const StackedCard = ({ children, gridCols = "grid-cols-[40%_1fr]" }) => {
+type Props = {
+  children: React.ReactNode;
+  gridCols?: string;
+};
+
+const StackedCard = ({
+  children,
+  gridCols = "md:grid-cols-[40%_1fr]",
+}: Props) => {
   return (
     <div className="relative">
       <div
-        className={`relative z-10 bg-white rounded-2xl grid place-items-center ${gridCols} p-12 w-full`}
+        className={`relative z-10 bg-white rounded-2xl grid place-items-center ${gridCols} p-6 md:p-12 w-full`}
       >
         {children}
       </div>
