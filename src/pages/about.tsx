@@ -14,7 +14,7 @@ const AboutPage = () => {
       <div className="container">
         <header className="pt-32 min-h-screen text-center">
           <div className="mb-8">
-            <h1 className="text-black-900 text-5xl font-semibold mb-6">
+            <h1 className="text-black-900 text-3xl md:text-5xl font-semibold mb-6">
               About us
             </h1>
 
@@ -28,7 +28,7 @@ const AboutPage = () => {
         </header>
 
         <section className="mt-8 mb-8 pb-12 border-b border-b-gray-300 text-center">
-          <h2 className="text-black-900 text-5xl font-semibold mb-6">
+          <h2 className="text-black-900 text-3xl md:text-5xl font-semibold mb-6">
             Our mission
           </h2>
 
@@ -42,8 +42,8 @@ const AboutPage = () => {
           </p>
         </section>
 
-        <section className="flex items-center my-32">
-          <h2 className="text-black-900 text-5xl font-semibold max-w-[30%]">
+        <section className="flex flex-col md:flex-row items-center my-32">
+          <h2 className="text-black-900 text-3xl md:text-5xl font-semibold text-center md:text-left md:max-w-[30%]">
             Let's start working more efficiently today!
           </h2>
           <div className="h-[450px] w-full">
@@ -52,25 +52,27 @@ const AboutPage = () => {
         </section>
 
         <section className="mb-8  text-center">
-          <h2 className="text-black-900 text-5xl font-semibold mb-6">Team</h2>
+          <h2 className="text-black-900 text-3xl md:text-5xl font-semibold mb-6">
+            Team
+          </h2>
 
           <p className="text-xl text-black-900 max-w-[70%] mx-auto mb-8">
             Meet the people behind our magical product.
           </p>
 
-          <div className="grid grid-cols-4 grid-rows-2 gap-8 place-items-center ">
+          <div className="grid grid-cols-2 md:grid-cols-4 grid-rows-2 gap-8 place-items-center ">
             {[...Array(8)].map((_, index) => (
               <div>
-                <div className="h-[160px] w-[160px]">
+                <div className="h-[80px] w-[80px] md:h-[160px] md:w-[160px]">
                   <img
                     src={avatarImg}
                     key={index}
-                    className="rounded-full h-full"
-                    width="160"
-                    height="160"
+                    className="rounded-full h-full w-full"
+                    // width="160"
+                    // height="160"
                   />
                 </div>
-                <p className="text-black-900 font-semibold text-xl text-center mt-4">
+                <p className="text-black-900 font-semibold md:text-xl text-center mt-4">
                   Hannah Pete
                 </p>
                 <p className="text-black-900 text-xl text-center">CEO</p>

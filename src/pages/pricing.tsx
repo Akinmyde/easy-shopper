@@ -57,7 +57,7 @@ const Pricing = () => {
     <Layout>
       <div className="container pb-24">
         <header className="mt-40 grid place-items-center">
-          <h1 className="text-black-900 text-5xl font-semibold text-center">
+          <h1 className="text-black-900 text-3xl md:text-5xl font-semibold text-center">
             Pricing
           </h1>
           <p className="text-black-900 text-xl text-center max-w-[450px] mt-5">
@@ -65,7 +65,7 @@ const Pricing = () => {
             exactly what it should be.
           </p>
 
-          <div className="grid grid-cols-3 my-12">
+          <div className="grid md:grid-cols-3 my-12">
             <PricingCard
               title="Basic"
               amount={9}
@@ -90,7 +90,7 @@ const Pricing = () => {
             Compare Features
           </h2>
 
-          <div className="grid grid-cols-3">
+          <div className="grid gap-6 md:gap-0 md:grid-cols-3">
             {features.map((feature) => (
               <div>
                 <h3 className="text-black-900 text-[32px] font-semibold">
@@ -115,7 +115,7 @@ const Pricing = () => {
           <h2 className="text-black-900 text-5xl font-semibold text-center max-w-[500px]">
             Frequently asked questions
           </h2>
-          <div className="w-1/2 mt-6">
+          <div className="md:w-1/2 mt-6">
             <Accordion items={faqsAccordionItems} />
           </div>
         </section>

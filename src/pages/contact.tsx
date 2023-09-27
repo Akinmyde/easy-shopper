@@ -10,13 +10,15 @@ import Button from "../components/button";
 const ContactPage = () => {
   return (
     <Layout>
-      <div className="grid place-items-center grid-cols-2 py-24">
+      <div className="grid place-items-center md:grid-cols-2 py-24">
         <div className="w-full">
           <img src={image} className="h-full object-cover w-full" />
         </div>
 
         <div>
-          <h1 className="text-5xl font-semibold text-black-900">Contact Us</h1>
+          <h1 className="text-3xl md:text-5xl font-semibold text-black-900">
+            Contact Us
+          </h1>
           <p className="text-black-900 text-xl my-8">
             Explore the future with us. Feel free to get in touch
           </p>
